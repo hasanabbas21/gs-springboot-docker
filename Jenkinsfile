@@ -31,19 +31,18 @@ pipeline {
          stage ('Deploy to Artifactory') {
             steps {
                 echo 'Deploying jar to artifactory.'
-                sh "mvn release:clean release:prepare release:perform"
-                sleep(20)
+                sh "mvn deploy"
             }
         }
         
          stage ('Run Application - jar') {
             steps {
                 echo 'Running the jar file '
-                sh " curl -O http://localhost:8081/artifactory/libs-release-local/org/springframework/gs-springboot-docker/0.0.14-SNAPSHOT/gs-springboot-docker-0.0.14-SNAPSHOT.jar"
-                sh "cp gs-springboot-docker-0.0.14-SNAPSHOT.jar target"
+                sh " curl -O http://localhost:8081/artifactory/libs-release-local/org/springframework/gs-spring-boot-docker/0.0.10/gs-spring-boot-docker-0.0.10.jar"
+                sh "cp gs-spring-boot-docker-0.0.10.jar target"
                 sleep(20)
                 sh "cd target"
-                sh " java -jar gs-springboot-docker-0.0.14-SNAPSHOT.jar"
+                sh " java -jar gs-spring-boot-docker-0.0.10.jar"
             }
         }
 
