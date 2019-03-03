@@ -34,18 +34,6 @@ pipeline {
                 sh "mvn deploy"
             }
         }
-        
-         stage ('Run Application - jar') {
-            steps {
-                echo 'Running the jar file '
-                sh " curl -O http://localhost:8081/artifactory/libs-release-local/org/springframework/gs-spring-boot-docker/0.0.10/gs-spring-boot-docker-0.0.10.jar"
-                sh "cp gs-spring-boot-docker-0.0.10.jar target"
-                sleep(20)
-                sh "cd target"
-                sh " java -jar gs-spring-boot-docker-0.0.10.jar"
-            }
-        }
-
                
     }
 }

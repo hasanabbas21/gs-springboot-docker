@@ -1,9 +1,9 @@
 ---
 applications:
-- name: gs-spring-boot-auto-jenkins-010
+- name: gs-spring-boot-auto-jenkins-015
   buildpack: java_buildpack
   memory: 800M
   instances: 1
-  path: target/gs-spring-boot-docker-0.0.10.jar
+  path: target/gs-springboot-docker-0.0.15-SNAPSHOT.jar
   env:
     SPRING_PROFILES_ACTIVE : cloud 
