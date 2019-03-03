@@ -31,7 +31,7 @@ pipeline {
          stage ('Deploy to Artifactory') {
             steps {
                 echo 'Deploying jar to artifactory.'
-                sh "release:clean release:prepare release:perform"
+                sh "mvn release:clean release:prepare release:perform"
                 sleep(20)
             }
         }
