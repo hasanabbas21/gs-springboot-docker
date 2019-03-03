@@ -44,10 +44,7 @@ pipeline {
                 sh " java -jar gs-springboot-docker-0.0.14-SNAPSHOT.jar"
             }
         }
-        
-        
 
-cd target
         
         
     }
