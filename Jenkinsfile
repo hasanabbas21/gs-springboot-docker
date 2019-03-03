@@ -21,6 +21,13 @@ pipeline {
             }
         }
         
+         stage ('Test') {
+            steps {
+                echo 'Run Junit Tests'
+                sh " mvn test"
+            }
+        }
+        
          stage ('Deploy to Artifactory') {
             steps {
                 echo 'Deploying jar to artifactory.'
