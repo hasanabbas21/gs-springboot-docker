@@ -1,0 +1,7 @@
+---
+applications:
+- name: gs-spring-boot-docker-cf
+  memory: 800M
+  instances: 1
+  env:
+    SPRING_PROFILES_ACTIVE : cloud
