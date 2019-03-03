@@ -35,6 +35,20 @@ pipeline {
             }
         }
         
+         stage ('Run Application - jar') {
+            steps {
+                echo 'Running the jar file '
+                sh " curl -O http://localhost:8081/artifactory/libs-snapshot-local/org/springframework/gs-springboot-docker/0.0.14-SNAPSHOT/gs-springboot-docker-0.0.14-SNAPSHOT.jar"
+                sh "cp gs-springboot-docker-0.0.14-SNAPSHOT.jar target"
+                sh "cd target"
+                sh " java -jar gs-springboot-docker-0.0.14-SNAPSHOT.jar"
+            }
+        }
+        
+        
+
+cd target
+        
         
     }
 }
