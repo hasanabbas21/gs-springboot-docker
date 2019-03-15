@@ -32,7 +32,7 @@ public class Application {
          }
     	
     	String out = "<html><body><h1 align=\"center\">Hello Everyone - have a nice day !!</h1>"
-    			+ "<h2 align=\"center\">Who ran this request : " + hostname + " </h2></body></html>";
+    			+ "<h2 align=\"center\">Pod running this request : " + hostname + " </h2></body></html>";
        
     	return out;
     }
